@@ -9,8 +9,21 @@ body {
 }
 
 .title {
-  padding: 1rem 0;
+  margin: 1rem 0;
   text-align: center;
+}
+
+.filter {
+  margin: 1rem 0.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.filter__select {
+  margin-left: 0.4rem;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1.3rem;
 }
 
 .cards-container {
@@ -41,4 +54,10 @@ body {
 .card__fully-vaccinated {
   font-size: 0.8rem;
   font-weight: normal;
+}
+
+@media (min-width: 500px) {
+  .filter {
+    text-align: left;
+  }
 }
