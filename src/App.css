@@ -5,6 +5,7 @@
 }
 
 body {
+  min-width: 280px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -28,36 +29,54 @@ body {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
   gap: 0 1rem;
 }
 
 .card {
-  padding: 0.5rem;
+  padding: 0.5rem 0.2rem;
   border-bottom: 1px solid lightgrey;
 }
 
 .card:hover {
-  background-color: rgb(206, 245, 233);
+  background-color: rgb(203, 241, 203);
 }
 
 .card__name {
+  padding: 0 0.2rem;
   margin-bottom: 0.25rem;
   font-size: 1.1rem;
 }
 
 .card__partially-vaccinated {
+  display: inline-block;
+  padding: 0.15rem 0.3rem;
+  margin-bottom: 0.25rem;
+  border-radius: 10px;
+  background-color: rgb(203, 241, 203);
   font-size: 0.8rem;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .card__fully-vaccinated {
+  padding: 0.15rem 0.3rem;
+  border-radius: 10px;
+
   font-size: 0.8rem;
-  font-weight: normal;
+  font-weight: bold;
 }
 
-@media (min-width: 500px) {
+.card__percentage {
+  font-weight: bold;
+}
+
+@media (min-width: 700px) {
   .filter {
+    padding: 0 5rem;
     text-align: left;
+  }
+
+  .cards-container {
+    padding: 0 5rem;
   }
 }
