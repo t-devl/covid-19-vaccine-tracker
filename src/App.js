@@ -31,9 +31,8 @@ function App() {
               unitedKingdom.push({
                 name: key,
                 vaccinesAdministered: data[key].All.administered,
-                peopleVaccinated: data[key].All.people_vaccinated,
-                peoplePartiallyVaccinated:
-                  data[key].All.people_partially_vaccinated,
+                peopleVaccinated: data[key].All.people_partially_vaccinated,
+                peoplePartiallyVaccinated: data[key].All.people_vaccinated,
                 population: data[key].All.population,
                 continent: data[key].All.continent,
                 location: data[key].All.location,
@@ -44,9 +43,8 @@ function App() {
               europeanUnion.push({
                 name: key,
                 administered: data[key].All.administered,
-                peopleVaccinated: data[key].All.people_vaccinated,
-                peoplePartiallyVaccinated:
-                  data[key].All.people_partially_vaccinated,
+                peopleVaccinated: data[key].All.people_partially_vaccinated,
+                peoplePartiallyVaccinated: data[key].All.people_vaccinated,
                 lastUpdated: data[key].All.updated,
                 population: data[key].All.population,
               });
@@ -60,9 +58,8 @@ function App() {
               continents.push({
                 name: key,
                 administered: data[key].All.administered,
-                peopleVaccinated: data[key].All.people_vaccinated,
-                peoplePartiallyVaccinated:
-                  data[key].All.people_partially_vaccinated,
+                peopleVaccinated: data[key].All.people_partially_vaccinated,
+                peoplePartiallyVaccinated: data[key].All.people_vaccinated,
                 lastUpdated: data[key].All.updated,
               });
               break;
@@ -70,9 +67,8 @@ function App() {
               world.push({
                 name: key,
                 administered: data[key].All.administered,
-                peopleVaccinated: data[key].All.people_vaccinated,
-                peoplePartiallyVaccinated:
-                  data[key].All.people_partially_vaccinated,
+                peopleVaccinated: data[key].All.people_partially_vaccinated,
+                peoplePartiallyVaccinated: data[key].All.people_vaccinated,
                 lastUpdated: data[key].All.updated,
                 population: data["Global"].All.population,
               });
@@ -83,9 +79,8 @@ function App() {
               sovereignStates.push({
                 name: key,
                 vaccinesAdministered: data[key].All.administered,
-                peopleVaccinated: data[key].All.people_vaccinated,
-                peoplePartiallyVaccinated:
-                  data[key].All.people_partially_vaccinated,
+                peopleVaccinated: data[key].All.people_partially_vaccinated,
+                peoplePartiallyVaccinated: data[key].All.people_vaccinated,
                 population: data[key].All.population,
                 continent: data[key].All.continent,
                 location: data[key].All.location,
