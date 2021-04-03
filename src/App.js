@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import CardsContainer from "./components/CardsContainer";
 import Filter from "./components/Filter";
+import Sort from "./components/Sort";
 
 function App() {
   const [filterOption, setFilterOption] = useState("");
+  const [sortOption, setSortOption] = useState("Alphabetical (A-Z)");
   const [sovereignStates, setSovereignStates] = useState([]);
   const [unitedKingdom, setUnitedKingdom] = useState([]);
   const [europeanUnion, setEuropeanUnion] = useState([]);
@@ -136,7 +138,30 @@ function App() {
     } else {
       setDisplayedData(continents);
     }
+    setSortOption("Alphabetical (A-Z)");
   }, [filterOption]);
+
+  useEffect(() => {
+    if (sortOption === "Alphabetical (A-Z)") {
+      const sortedData = [...displayedData].sort((a, b) =>
+        a.name > b.name ? 1 : -1
+      );
+      setDisplayedData(sortedData);
+    } else if (sortOption === "Most vaccines administered") {
+      const sortedData = [...displayedData].sort((a, b) =>
+        a.peoplePartiallyVaccinated < b.peoplePartiallyVaccinated ? 1 : -1
+      );
+      setDisplayedData(sortedData);
+    } else if (sortOption === "Highest percentage vaccinated") {
+      const sortedData = [...displayedData].sort((a, b) =>
+        (a.population ? a.peoplePartiallyVaccinated / a.population : -1) <
+        (b.population ? b.peoplePartiallyVaccinated / b.population : -1)
+          ? 1
+          : -1
+      );
+      setDisplayedData(sortedData);
+    }
+  }, [sortOption]);
 
   return (
     <div className="App">
@@ -145,7 +170,15 @@ function App() {
         filterOption={filterOption}
         setFilterOption={setFilterOption}
       ></Filter>
-      <CardsContainer displayedData={displayedData}></CardsContainer>
+      <Sort
+        sortOption={sortOption}
+        setSortOption={setSortOption}
+        filterOption={filterOption}
+      ></Sort>
+      <CardsContainer
+        displayedData={displayedData}
+        sortOption={sortOption}
+      ></CardsContainer>
     </div>
   );
 }

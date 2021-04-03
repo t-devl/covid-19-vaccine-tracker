@@ -14,17 +14,19 @@ body {
   text-align: center;
 }
 
-.filter {
+.filter,
+.sort {
   margin: 1rem 0.5rem;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 
-.filter__select {
+.filter__select,
+.sort__select {
   margin-left: 0.4rem;
   border: none;
   border-bottom: 1px solid black;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .cards-container {
@@ -36,6 +38,10 @@ body {
 .card {
   padding: 0.5rem 0.2rem;
   border-bottom: 1px solid lightgrey;
+}
+
+.card--grey {
+  background-color: rgb(235, 235, 235);
 }
 
 .card:hover {
@@ -71,9 +77,16 @@ body {
 }
 
 @media (min-width: 700px) {
-  .filter {
+  .filter,
+  .sort {
     padding: 0 5rem;
+    font-size: 1.4rem;
     text-align: left;
+  }
+
+  .filter__select,
+  .sort__select {
+    font-size: 1.3rem;
   }
 
   .cards-container {
