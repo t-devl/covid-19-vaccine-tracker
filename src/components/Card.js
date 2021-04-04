@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Card({ data, sortOption }) {
+export default function Card({ data, sortOption, rank }) {
   return (
     <div
       className={`card ${
@@ -9,6 +9,7 @@ export default function Card({ data, sortOption }) {
           : ""
       }`}
     >
+      <div className="card__index">{rank}</div>
       <h3 className="card__name">{data.name}</h3>
       <p className="card__partially-vaccinated">
         {data.peoplePartiallyVaccinated.toLocaleString()} partially vaccinated{" "}

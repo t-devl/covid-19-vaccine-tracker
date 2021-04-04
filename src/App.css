@@ -48,6 +48,15 @@ body {
   background-color: rgb(203, 241, 203);
 }
 
+.card__index {
+  float: left;
+  padding: 0 0.2rem;
+  margin-top: 0.1rem;
+  margin-right: 0.5rem;
+  color: rgb(45, 45, 45);
+  font-size: 0.9rem;
+}
+
 .card__name {
   padding: 0 0.2rem;
   margin-bottom: 0.25rem;
