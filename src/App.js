@@ -58,7 +58,7 @@ function App() {
               case "European Union":
                 europeanUnion.push({
                   name: key,
-                  administered: data[key].All.administered,
+                  vaccinesAdministered: data[key].All.administered,
                   peopleVaccinated: data[key].All.people_partially_vaccinated,
                   peoplePartiallyVaccinated: data[key].All.people_vaccinated,
                   lastUpdated: data[key].All.updated,
@@ -73,7 +73,7 @@ function App() {
               case "Africa":
                 continents.push({
                   name: key,
-                  administered: data[key].All.administered,
+                  vaccinesAdministered: data[key].All.administered,
                   peopleVaccinated: data[key].All.people_partially_vaccinated,
                   peoplePartiallyVaccinated: data[key].All.people_vaccinated,
                   lastUpdated: data[key].All.updated,
@@ -82,7 +82,7 @@ function App() {
               case "World":
                 world.push({
                   name: key,
-                  administered: data[key].All.administered,
+                  vaccinesAdministered: data[key].All.administered,
                   peopleVaccinated: data[key].All.people_partially_vaccinated,
                   peoplePartiallyVaccinated: data[key].All.people_vaccinated,
                   lastUpdated: data[key].All.updated,
@@ -149,7 +149,7 @@ function App() {
       setDisplayedData(sortedData);
     } else if (sortOption === "Most vaccines administered") {
       const sortedData = [...displayedData].sort((a, b) =>
-        a.peoplePartiallyVaccinated < b.peoplePartiallyVaccinated ? 1 : -1
+        a.vaccinesAdministered < b.vaccinesAdministered ? 1 : -1
       );
       setDisplayedData(sortedData);
     } else if (sortOption === "Highest percentage vaccinated") {

@@ -63,7 +63,7 @@ body {
   font-size: 1.1rem;
 }
 
-.card__partially-vaccinated {
+.card__vaccines-administered {
   display: inline-block;
   padding: 0.15rem 0.3rem;
   margin-bottom: 0.25rem;
@@ -73,16 +73,12 @@ body {
   font-weight: bold;
 }
 
+.card__partially-vaccinated,
 .card__fully-vaccinated {
   padding: 0.15rem 0.3rem;
   border-radius: 10px;
-
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.card__percentage {
-  font-weight: bold;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
 }
 
 @media (min-width: 700px) {

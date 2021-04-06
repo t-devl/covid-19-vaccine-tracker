@@ -4,13 +4,17 @@ export default function Card({ data, sortOption, rank }) {
   return (
     <div
       className={`card ${
-        !data.population && sortOption === "Highest percentage vaccinated"
+        (!data.population || data.peoplePartiallyVaccinated === 0) &&
+        sortOption === "Highest percentage vaccinated"
           ? "card--grey"
           : ""
       }`}
     >
       <div className="card__index">{rank}</div>
-      <h3 className="card__name">{data.name}</h3>
+      <h2 className="card__name">{data.name}</h2>
+      <p className="card__vaccines-administered">
+        {data.vaccinesAdministered.toLocaleString()} vaccines administered
+      </p>
       <p className="card__partially-vaccinated">
         {data.peoplePartiallyVaccinated.toLocaleString()} partially vaccinated{" "}
         <span className="card__percentage">
