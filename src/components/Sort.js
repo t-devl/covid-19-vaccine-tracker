@@ -11,7 +11,7 @@ export default function Sort({ sortOption, setSortOption, filterOption }) {
       >
         <option className="sort__option">Alphabetical (A-Z)</option>
         <option className="sort__option">Most vaccines administered</option>
-        {filterOption === "Sovereign state" ? (
+        {filterOption === "Country" ? (
           <option className="sort__option">
             Highest percentage vaccinated
           </option>

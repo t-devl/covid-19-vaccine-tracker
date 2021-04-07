@@ -7,7 +7,7 @@ import Sort from "./components/Sort";
 function App() {
   const [filterOption, setFilterOption] = useState("");
   const [sortOption, setSortOption] = useState("Alphabetical (A-Z)");
-  const [sovereignStates, setSovereignStates] = useState([]);
+  const [country, setCountry] = useState([]);
   const [unitedKingdom, setUnitedKingdom] = useState([]);
   const [europeanUnion, setEuropeanUnion] = useState([]);
   const [continents, setContinents] = useState([]);
@@ -22,19 +22,19 @@ function App() {
         60 * 60 * 1000
     ) {
       let data = JSON.parse(localStorage.getItem("covidVaccineData"));
-      setSovereignStates([...data.sovereignStates]);
+      setCountry([...data.country]);
       setUnitedKingdom([...data.unitedKingdom]);
       setEuropeanUnion([...data.europeanUnion]);
       setContinents([...data.continents]);
       setWorld([...data.world]);
-      setFilterOption("Sovereign state");
+      setFilterOption("Country");
     } else {
       fetch("https://covid-api.mmediagroup.fr/v1/vaccines")
         .then((res) => res.json())
         .then((data) => {
           let unitedKingdom = [];
           let europeanUnion = [];
-          let sovereignStates = [];
+          let country = [];
           let continents = [];
           let world = [];
 
@@ -92,7 +92,7 @@ function App() {
               case "Global":
                 break;
               default:
-                sovereignStates.push({
+                country.push({
                   name: key,
                   vaccinesAdministered: data[key].All.administered,
                   peopleVaccinated: data[key].All.people_partially_vaccinated,
@@ -106,7 +106,7 @@ function App() {
             }
           });
           return {
-            sovereignStates,
+            country,
             unitedKingdom,
             europeanUnion,
             continents,
@@ -114,12 +114,12 @@ function App() {
           };
         })
         .then((arrays) => {
-          setSovereignStates([...arrays.sovereignStates]);
+          setCountry([...arrays.country]);
           setUnitedKingdom([...arrays.unitedKingdom]);
           setEuropeanUnion([...arrays.europeanUnion]);
           setContinents([...arrays.continents]);
           setWorld([...arrays.world]);
-          setFilterOption("Sovereign state");
+          setFilterOption("Country");
 
           localStorage.setItem(
             "covidVaccineData",
@@ -133,8 +133,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (filterOption === "Sovereign state") {
-      setDisplayedData(sovereignStates);
+    if (filterOption === "Country") {
+      setDisplayedData(country);
     } else {
       setDisplayedData(continents);
     }

@@ -9,7 +9,7 @@ export default function Filter({ filterOption, setFilterOption }) {
         value={filterOption}
         onChange={(e) => setFilterOption(e.target.value)}
       >
-        <option className="filter__option">Sovereign state</option>
+        <option className="filter__option">Country</option>
         <option className="filter__option">Continent</option>
       </select>
     </div>
