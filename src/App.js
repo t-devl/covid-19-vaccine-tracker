@@ -8,9 +8,6 @@ function App() {
   const [filterOption, setFilterOption] = useState("");
   const [sortOption, setSortOption] = useState("Alphabetical (A-Z)");
   const [country, setCountry] = useState([]);
-  const [unitedKingdom, setUnitedKingdom] = useState([]);
-  const [europeanUnion, setEuropeanUnion] = useState([]);
-  const [continents, setContinents] = useState([]);
   const [world, setWorld] = useState([]);
   const [displayedData, setDisplayedData] = useState([]);
 
@@ -23,65 +20,17 @@ function App() {
     ) {
       let data = JSON.parse(localStorage.getItem("covidVaccineData"));
       setCountry([...data.country]);
-      setUnitedKingdom([...data.unitedKingdom]);
-      setEuropeanUnion([...data.europeanUnion]);
-      setContinents([...data.continents]);
       setWorld([...data.world]);
       setFilterOption("Country");
     } else {
       fetch("https://covid-api.mmediagroup.fr/v1/vaccines")
         .then((res) => res.json())
         .then((data) => {
-          let unitedKingdom = [];
-          let europeanUnion = [];
           let country = [];
-          let continents = [];
           let world = [];
 
           Object.keys(data).forEach((key) => {
             switch (key) {
-              case "England":
-              case "Northern Ireland":
-              case "Scotland":
-              case "Wales":
-                unitedKingdom.push({
-                  name: key,
-                  vaccinesAdministered: data[key].All.administered,
-                  peopleVaccinated: data[key].All.people_vaccinated,
-                  peoplePartiallyVaccinated:
-                    data[key].All.people_partially_vaccinated,
-                  population: data[key].All.population,
-                  continent: data[key].All.continent,
-                  location: data[key].All.location,
-                  lastUpdated: data[key].All.updated,
-                });
-                break;
-              case "European Union":
-                europeanUnion.push({
-                  name: key,
-                  vaccinesAdministered: data[key].All.administered,
-                  peopleVaccinated: data[key].All.people_vaccinated,
-                  peoplePartiallyVaccinated:
-                    data[key].All.people_partially_vaccinated,
-                  lastUpdated: data[key].All.updated,
-                  population: data[key].All.population,
-                });
-                break;
-              case "Europe":
-              case "North America":
-              case "South America":
-              case "Oceania":
-              case "Asia":
-              case "Africa":
-                continents.push({
-                  name: key,
-                  vaccinesAdministered: data[key].All.administered,
-                  peopleVaccinated: data[key].All.people_vaccinated,
-                  peoplePartiallyVaccinated:
-                    data[key].All.people_partially_vaccinated,
-                  lastUpdated: data[key].All.updated,
-                });
-                break;
               case "World":
                 world.push({
                   name: key,
@@ -112,17 +61,11 @@ function App() {
           });
           return {
             country,
-            unitedKingdom,
-            europeanUnion,
-            continents,
             world,
           };
         })
         .then((arrays) => {
           setCountry([...arrays.country]);
-          setUnitedKingdom([...arrays.unitedKingdom]);
-          setEuropeanUnion([...arrays.europeanUnion]);
-          setContinents([...arrays.continents]);
           setWorld([...arrays.world]);
           setFilterOption("Country");
 
@@ -140,8 +83,6 @@ function App() {
   useEffect(() => {
     if (filterOption === "Country") {
       setDisplayedData(country);
-    } else {
-      setDisplayedData(continents);
     }
     setSortOption("Alphabetical (A-Z)");
   }, [filterOption]);

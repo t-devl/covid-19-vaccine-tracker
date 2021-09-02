@@ -10,7 +10,6 @@ export default function Filter({ filterOption, setFilterOption }) {
         onChange={(e) => setFilterOption(e.target.value)}
       >
         <option className="filter__option">Country</option>
-        <option className="filter__option">Continent</option>
       </select>
     </div>
   );
