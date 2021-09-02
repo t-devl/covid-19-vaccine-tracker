@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -6,7 +8,7 @@
 
 body {
   min-width: 280px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .title {
@@ -26,6 +28,7 @@ body {
   margin-left: 0.4rem;
   border: none;
   border-bottom: 1px solid black;
+  background: none;
   font-size: 1.1rem;
 }
 
@@ -51,7 +54,7 @@ body {
 .card__index {
   float: left;
   padding: 0 0.2rem;
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
   margin-right: 0.5rem;
   color: rgb(45, 45, 45);
   font-size: 0.9rem;
@@ -78,6 +81,7 @@ body {
   padding: 0.15rem 0.3rem;
   border-radius: 10px;
   margin-left: 0.5rem;
+  color: rgb(45, 45, 45);
   font-size: 0.75rem;
 }
 
@@ -85,16 +89,18 @@ body {
   .filter,
   .sort {
     padding: 0 5rem;
-    font-size: 1.4rem;
     text-align: left;
-  }
-
-  .filter__select,
-  .sort__select {
-    font-size: 1.3rem;
   }
 
   .cards-container {
     padding: 0 5rem;
+  }
+
+  .card__index {
+    margin-top: 0.1rem;
+  }
+
+  .card__name {
+    font-size: 1rem;
   }
 }
