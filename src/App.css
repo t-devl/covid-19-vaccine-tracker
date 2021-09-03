@@ -48,7 +48,20 @@ body {
 }
 
 .card:hover {
-  background-color: rgb(203, 241, 203);
+  cursor: pointer;
+}
+
+.card:hover .card__index {
+  color: black;
+}
+
+.card:hover .card__name {
+  text-decoration: underline;
+}
+
+.card:hover .card__partially-vaccinated,
+.card:hover .card__fully-vaccinated {
+  color: black;
 }
 
 .card__index {
@@ -56,7 +69,7 @@ body {
   padding: 0 0.2rem;
   margin-top: 0.2rem;
   margin-right: 0.5rem;
-  color: rgb(45, 45, 45);
+  color: rgb(60, 60, 60);
   font-size: 0.9rem;
 }
 
@@ -81,7 +94,7 @@ body {
   padding: 0.15rem 0.3rem;
   border-radius: 10px;
   margin-left: 0.5rem;
-  color: rgb(45, 45, 45);
+  color: rgb(60, 60, 60);
   font-size: 0.75rem;
 }
 
