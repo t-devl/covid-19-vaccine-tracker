@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/covid-19-vaccine-tracker/static/css/main.7eb33481.chunk.css",
-    "main.js": "/covid-19-vaccine-tracker/static/js/main.a034b85a.chunk.js",
-    "main.js.map": "/covid-19-vaccine-tracker/static/js/main.a034b85a.chunk.js.map",
-    "runtime-main.js": "/covid-19-vaccine-tracker/static/js/runtime-main.a6b1709f.js",
-    "runtime-main.js.map": "/covid-19-vaccine-tracker/static/js/runtime-main.a6b1709f.js.map",
-    "static/js/2.da6d81b4.chunk.js": "/covid-19-vaccine-tracker/static/js/2.da6d81b4.chunk.js",
-    "static/js/2.da6d81b4.chunk.js.map": "/covid-19-vaccine-tracker/static/js/2.da6d81b4.chunk.js.map",
-    "static/js/3.26e56e1a.chunk.js": "/covid-19-vaccine-tracker/static/js/3.26e56e1a.chunk.js",
-    "static/js/3.26e56e1a.chunk.js.map": "/covid-19-vaccine-tracker/static/js/3.26e56e1a.chunk.js.map",
+    "main.css": "/covid-19-vaccine-tracker/static/css/main.6b78219b.chunk.css",
+    "main.js": "/covid-19-vaccine-tracker/static/js/main.16b52d69.chunk.js",
+    "main.js.map": "/covid-19-vaccine-tracker/static/js/main.16b52d69.chunk.js.map",
+    "runtime-main.js": "/covid-19-vaccine-tracker/static/js/runtime-main.0e0ee1ff.js",
+    "runtime-main.js.map": "/covid-19-vaccine-tracker/static/js/runtime-main.0e0ee1ff.js.map",
+    "static/js/2.7944c37f.chunk.js": "/covid-19-vaccine-tracker/static/js/2.7944c37f.chunk.js",
+    "static/js/2.7944c37f.chunk.js.map": "/covid-19-vaccine-tracker/static/js/2.7944c37f.chunk.js.map",
+    "static/js/3.81dbd9ef.chunk.js": "/covid-19-vaccine-tracker/static/js/3.81dbd9ef.chunk.js",
+    "static/js/3.81dbd9ef.chunk.js.map": "/covid-19-vaccine-tracker/static/js/3.81dbd9ef.chunk.js.map",
     "index.html": "/covid-19-vaccine-tracker/index.html",
-    "static/css/main.7eb33481.chunk.css.map": "/covid-19-vaccine-tracker/static/css/main.7eb33481.chunk.css.map",
-    "static/js/2.da6d81b4.chunk.js.LICENSE.txt": "/covid-19-vaccine-tracker/static/js/2.da6d81b4.chunk.js.LICENSE.txt"
+    "static/css/main.6b78219b.chunk.css.map": "/covid-19-vaccine-tracker/static/css/main.6b78219b.chunk.css.map",
+    "static/js/2.7944c37f.chunk.js.LICENSE.txt": "/covid-19-vaccine-tracker/static/js/2.7944c37f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a6b1709f.js",
-    "static/js/2.da6d81b4.chunk.js",
-    "static/css/main.7eb33481.chunk.css",
-    "static/js/main.a034b85a.chunk.js"
+    "static/js/runtime-main.0e0ee1ff.js",
+    "static/js/2.7944c37f.chunk.js",
+    "static/css/main.6b78219b.chunk.css",
+    "static/js/main.16b52d69.chunk.js"
   ]
 }
