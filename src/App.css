@@ -19,7 +19,7 @@ body {
 .filter,
 .sort {
   margin: 1rem 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -29,7 +29,7 @@ body {
   border: none;
   border-bottom: 1px solid black;
   background: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .cards-container {
@@ -76,7 +76,7 @@ body {
 .card__name {
   padding: 0 0.2rem;
   margin-bottom: 0.25rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .card__vaccines-administered {
@@ -85,7 +85,7 @@ body {
   margin-bottom: 0.25rem;
   border-radius: 10px;
   background-color: rgb(203, 241, 203);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: bold;
 }
 
@@ -95,7 +95,7 @@ body {
   border-radius: 10px;
   margin-left: 0.5rem;
   color: rgb(60, 60, 60);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 .modal-container {
@@ -118,7 +118,8 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 250px;
+  width: 90%;
+  max-width: 340px;
   padding: 0.75rem 1rem 1rem;
   border-radius: 3px;
   box-shadow: 0 0 5px 1px rgb(112, 112, 112);
@@ -138,7 +139,7 @@ body {
 
 .modal__continent {
   color: rgb(150, 150, 150);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
 }
 
@@ -151,21 +152,21 @@ body {
 .fas.modal__close-icon {
   display: block;
   color: rgb(207, 54, 54);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .modal__population {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .modal__capital {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: normal;
 }
 
 .modal__list {
   padding: 0.75rem 0;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   list-style: none;
 }
 
@@ -175,14 +176,20 @@ body {
 
 .modal__last-updated {
   color: rgb(150, 150, 150);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 @media (min-width: 700px) {
   .filter,
   .sort {
     padding: 0 5rem;
+    font-size: 1.1rem;
     text-align: left;
+  }
+
+  .filter__select,
+  .sort__select {
+    font-size: 1.1rem;
   }
 
   .cards-container {
@@ -195,5 +202,40 @@ body {
 
   .card__name {
     font-size: 1rem;
+  }
+
+  .card__vaccines-administered {
+    font-size: 0.8rem;
+  }
+
+  .card__partially-vaccinated,
+  .card__fully-vaccinated {
+    font-size: 0.75rem;
+  }
+
+  .modal__continent {
+    font-size: 0.6rem;
+  }
+
+  .fas.modal__close-icon {
+    display: block;
+    color: rgb(207, 54, 54);
+    font-size: 0.9rem;
+  }
+
+  .modal__population {
+    font-size: 0.8rem;
+  }
+
+  .modal__capital {
+    font-size: 0.8rem;
+  }
+
+  .modal__list {
+    font-size: 0.85rem;
+  }
+
+  .modal__last-updated {
+    font-size: 0.75rem;
   }
 }

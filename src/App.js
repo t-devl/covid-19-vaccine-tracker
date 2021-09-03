@@ -68,7 +68,6 @@ function App() {
           };
         })
         .then((arrays) => {
-          console.log(arrays.countries);
           setCountries([...arrays.countries]);
           setWorld([...arrays.world]);
           setFilterOption("Country");
