@@ -7,7 +7,7 @@ import Sort from "./components/Sort";
 function App() {
   const [filterOption, setFilterOption] = useState("");
   const [sortOption, setSortOption] = useState("Alphabetical (A-Z)");
-  const [country, setCountry] = useState([]);
+  const [countries, setCountries] = useState([]);
   const [world, setWorld] = useState([]);
   const [displayedData, setDisplayedData] = useState([]);
 
@@ -19,14 +19,14 @@ function App() {
         60 * 60 * 1000
     ) {
       let data = JSON.parse(localStorage.getItem("covidVaccineData"));
-      setCountry([...data.country]);
+      setCountries([...data.countries]);
       setWorld([...data.world]);
       setFilterOption("Country");
     } else {
       fetch("https://covid-api.mmediagroup.fr/v1/vaccines")
         .then((res) => res.json())
         .then((data) => {
-          let country = [];
+          let countries = [];
           let world = [];
 
           Object.keys(data).forEach((key) => {
@@ -45,27 +45,31 @@ function App() {
               case "Global":
                 break;
               default:
-                country.push({
+                const { All: country, ...regions } = data[key];
+                countries.push({
                   name: key,
-                  vaccinesAdministered: data[key].All.administered,
-                  peopleVaccinated: data[key].All.people_vaccinated,
+                  vaccinesAdministered: country.administered,
+                  peopleVaccinated: country.people_vaccinated,
                   peoplePartiallyVaccinated:
-                    data[key].All.people_partially_vaccinated,
-                  population: data[key].All.population,
-                  continent: data[key].All.continent,
-                  location: data[key].All.location,
-                  lastUpdated: data[key].All.updated,
+                    country.people_partially_vaccinated,
+                  population: country.population,
+                  continent: country.continent,
+                  location: country.location,
+                  capital: country.capital_city,
+                  lastUpdated: country.updated,
+                  regions: regions,
                 });
                 break;
             }
           });
           return {
-            country,
+            countries,
             world,
           };
         })
         .then((arrays) => {
-          setCountry([...arrays.country]);
+          console.log(arrays.countries);
+          setCountries([...arrays.countries]);
           setWorld([...arrays.world]);
           setFilterOption("Country");
 
@@ -82,7 +86,7 @@ function App() {
 
   useEffect(() => {
     if (filterOption === "Country") {
-      setDisplayedData(country);
+      setDisplayedData(countries);
     }
     setSortOption("Alphabetical (A-Z)");
   }, [filterOption]);

@@ -1,6 +1,13 @@
 import React from "react";
+import Modal from "./Modal";
 
-export default function Card({ data, sortOption, rank }) {
+export default function Card({
+  data,
+  sortOption,
+  rank,
+  activateModal,
+  cardClicked,
+}) {
   return (
     <div
       className={`card ${
@@ -9,6 +16,7 @@ export default function Card({ data, sortOption, rank }) {
           ? "card--grey"
           : ""
       }`}
+      onClick={() => activateModal(data.name)}
     >
       <div className="card__index">{rank}</div>
       <h2 className="card__name">{data.name}</h2>
@@ -36,6 +44,7 @@ export default function Card({ data, sortOption, rank }) {
             : ""}
         </span>
       </p>
+      <Modal data={data} rank={rank} active={cardClicked === data.name}></Modal>
     </div>
   );
 }
