@@ -120,15 +120,18 @@ body {
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 340px;
+  max-height: 95vh;
   padding: 0.75rem 1rem 1rem;
   border-radius: 3px;
   box-shadow: 0 0 5px 1px rgb(112, 112, 112);
   background: white;
   z-index: 10;
+  text-align: center;
+  overflow-y: auto;
 }
 
-.modal__header {
-  text-align: center;
+.modal--regions-active {
+  max-width: 700px;
 }
 
 .modal__top-bar {
@@ -168,6 +171,7 @@ body {
   padding: 0.75rem 0;
   font-size: 0.95rem;
   list-style: none;
+  text-align: left;
 }
 
 .modal__list-item {
@@ -177,6 +181,51 @@ body {
 .modal__last-updated {
   color: rgb(150, 150, 150);
   font-size: 0.85rem;
+  text-align: left;
+}
+
+.view-regions-btn {
+  padding: 0.4rem 0.8rem;
+  margin-top: 0.5rem;
+  border: 1px solid rgb(60, 60, 60);
+  background: none;
+  color: rgb(60, 60, 60);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.view-regions-btn:hover,
+.view-regions-btn:focus {
+  border-color: black;
+  color: black;
+  text-decoration: underline;
+}
+
+.regions {
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem 0.5rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.regions__title {
+  grid-column: 1/-1;
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+.regions--active {
+  display: grid;
+}
+
+.region__name {
+  font-size: 0.95rem;
+}
+
+.region__vaccines-administered {
+  font-size: 0.9rem;
 }
 
 @media (min-width: 700px) {
@@ -237,5 +286,21 @@ body {
 
   .modal__last-updated {
     font-size: 0.75rem;
+  }
+
+  .view-regions-btn {
+    font-size: 0.8rem;
+  }
+
+  .regions__title {
+    font-size: 0.9rem;
+  }
+
+  .region__name {
+    font-size: 0.85rem;
+  }
+
+  .region__vaccines-administered {
+    font-size: 0.8rem;
   }
 }

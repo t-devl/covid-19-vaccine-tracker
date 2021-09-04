@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import Regions from "./Regions";
 
 export default function Modal({ data, active }) {
   const [isModalActive, setIsModalActive] = useState(false);
+  const [isRegionsActive, setIsRegionsActive] = useState(false);
 
   useEffect(() => {
     setIsModalActive(active);
@@ -11,13 +13,23 @@ export default function Modal({ data, active }) {
     setIsModalActive(false);
   };
 
+  const toggleRegions = () => {
+    if (isRegionsActive) {
+      setIsRegionsActive(false);
+    } else {
+      setIsRegionsActive(true);
+    }
+  };
+
   return (
     <div
       className={`modal-container ${
         isModalActive ? "modal-container--active" : ""
       }`}
     >
-      <div className="modal">
+      <div
+        className={`modal ${isRegionsActive ? "modal--regions-active" : ""}`}
+      >
         <header className="modal__header">
           <div className="modal__top-bar">
             <span className="modal__continent">{data.continent}</span>
@@ -58,6 +70,19 @@ export default function Modal({ data, active }) {
         <p className="modal__last-updated">
           Last updated: {new Date(data.lastUpdated).toLocaleString()}
         </p>
+        {Object.keys(data.regions).length > 0 ? (
+          <div className="regions-container">
+            <button className="view-regions-btn" onClick={toggleRegions}>
+              {isRegionsActive ? "Hide Regions" : "Show Regions"}
+            </button>
+            <Regions
+              regions={data.regions}
+              isRegionsActive={isRegionsActive}
+            ></Regions>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
