@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
 export default function CardsContainer({ displayedData, sortOption }) {
-  const [cardClicked, setCardClicked] = useState("");
+  const [cardClicked, setCardClicked] = useState(null);
 
   return (
     <div className="cards-container">
@@ -14,6 +14,7 @@ export default function CardsContainer({ displayedData, sortOption }) {
           rank={index + 1}
           setCardClicked={setCardClicked}
           cardClicked={cardClicked}
+          numberOfCards={displayedData.length}
         ></Card>
       ))}
     </div>

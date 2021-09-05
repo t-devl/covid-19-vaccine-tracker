@@ -7,6 +7,7 @@ export default function Card({
   rank,
   setCardClicked,
   cardClicked,
+  numberOfCards,
 }) {
   return (
     <div
@@ -16,7 +17,7 @@ export default function Card({
           ? "card--grey"
           : ""
       }`}
-      onClick={() => setCardClicked(data.name)}
+      onClick={() => setCardClicked(rank)}
     >
       <div className="card__index">{rank}</div>
       <h2 className="card__name">{data.name}</h2>
@@ -47,8 +48,9 @@ export default function Card({
       <Modal
         data={data}
         rank={rank}
-        active={cardClicked === data.name}
+        active={cardClicked === rank}
         setCardClicked={setCardClicked}
+        numberOfCards={numberOfCards}
       ></Modal>
     </div>
   );
