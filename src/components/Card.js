@@ -5,7 +5,7 @@ export default function Card({
   data,
   sortOption,
   rank,
-  activateModal,
+  setCardClicked,
   cardClicked,
 }) {
   return (
@@ -16,7 +16,7 @@ export default function Card({
           ? "card--grey"
           : ""
       }`}
-      onClick={() => activateModal(data.name)}
+      onClick={() => setCardClicked(data.name)}
     >
       <div className="card__index">{rank}</div>
       <h2 className="card__name">{data.name}</h2>
@@ -44,7 +44,12 @@ export default function Card({
             : ""}
         </span>
       </p>
-      <Modal data={data} rank={rank} active={cardClicked === data.name}></Modal>
+      <Modal
+        data={data}
+        rank={rank}
+        active={cardClicked === data.name}
+        setCardClicked={setCardClicked}
+      ></Modal>
     </div>
   );
 }

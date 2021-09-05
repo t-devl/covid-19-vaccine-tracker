@@ -4,10 +4,6 @@ import Card from "./Card";
 export default function CardsContainer({ displayedData, sortOption }) {
   const [cardClicked, setCardClicked] = useState("");
 
-  const activateModal = (name) => {
-    setCardClicked(name);
-  };
-
   return (
     <div className="cards-container">
       {displayedData.map((item, index) => (
@@ -16,7 +12,7 @@ export default function CardsContainer({ displayedData, sortOption }) {
           data={item}
           sortOption={sortOption}
           rank={index + 1}
-          activateModal={activateModal}
+          setCardClicked={setCardClicked}
           cardClicked={cardClicked}
         ></Card>
       ))}

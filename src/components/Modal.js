@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Regions from "./Regions";
 
-export default function Modal({ data, active }) {
+export default function Modal({ data, active, setCardClicked }) {
   const [isModalActive, setIsModalActive] = useState(false);
   const [isRegionsActive, setIsRegionsActive] = useState(false);
 
@@ -9,8 +9,10 @@ export default function Modal({ data, active }) {
     setIsModalActive(active);
   }, [active]);
 
-  const closeModal = () => {
+  const closeModal = (e) => {
+    e.stopPropagation();
     setIsModalActive(false);
+    setCardClicked("");
   };
 
   const toggleRegions = () => {
