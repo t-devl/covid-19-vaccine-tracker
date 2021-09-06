@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/covid-19-vaccine-tracker/static/css/main.3d5c8c49.chunk.css",
+    "main.css": "/covid-19-vaccine-tracker/static/css/main.f93be9c7.chunk.css",
     "main.js": "/covid-19-vaccine-tracker/static/js/main.e190ae55.chunk.js",
     "main.js.map": "/covid-19-vaccine-tracker/static/js/main.e190ae55.chunk.js.map",
     "runtime-main.js": "/covid-19-vaccine-tracker/static/js/runtime-main.0e0ee1ff.js",
@@ -10,13 +10,13 @@
     "static/js/3.81dbd9ef.chunk.js": "/covid-19-vaccine-tracker/static/js/3.81dbd9ef.chunk.js",
     "static/js/3.81dbd9ef.chunk.js.map": "/covid-19-vaccine-tracker/static/js/3.81dbd9ef.chunk.js.map",
     "index.html": "/covid-19-vaccine-tracker/index.html",
-    "static/css/main.3d5c8c49.chunk.css.map": "/covid-19-vaccine-tracker/static/css/main.3d5c8c49.chunk.css.map",
+    "static/css/main.f93be9c7.chunk.css.map": "/covid-19-vaccine-tracker/static/css/main.f93be9c7.chunk.css.map",
     "static/js/2.7944c37f.chunk.js.LICENSE.txt": "/covid-19-vaccine-tracker/static/js/2.7944c37f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0e0ee1ff.js",
     "static/js/2.7944c37f.chunk.js",
-    "static/css/main.3d5c8c49.chunk.css",
+    "static/css/main.f93be9c7.chunk.css",
     "static/js/main.e190ae55.chunk.js"
   ]
 }
